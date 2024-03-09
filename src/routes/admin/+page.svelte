@@ -67,7 +67,6 @@
 <main
   class="gap-2 p-4 bg-tertiary/50 rounded-md flex flex-col w-full h-full overflow-y-auto"
 >
-  <!-- inputs bind -->
   <div class="w-full flex flex-col gap-2">
     <input
       type="text"

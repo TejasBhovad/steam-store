@@ -18,6 +18,11 @@
       href: "/cart",
       component: Cart,
     },
+    {
+      name: "Admin",
+      href: "/admin",
+      component: Featured,
+    },
   ];
 </script>
 
