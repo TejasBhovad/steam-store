@@ -6,7 +6,7 @@
   <Search class="w-6 h-6" />
   <input
     type="text"
-    class="w-full h-auto px-1 border-2 bg-utility border-0 rounded-md"
+    class="w-full h-auto px-1 bg-utility border-0 rounded-md outline-0"
     placeholder="Search for games"
   />
 </div>

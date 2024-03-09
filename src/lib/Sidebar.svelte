@@ -9,8 +9,8 @@
       component: Explore,
     },
     {
-      name: "Featured",
-      href: "/featured",
+      name: "Lab",
+      href: "/experiments",
       component: Featured,
     },
     {
