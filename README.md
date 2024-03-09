@@ -9,14 +9,15 @@ The project features a simple online game store with a few games and a cart syst
 1. Clone the repository
 2. Run `npm install`
 3. Run `npm run dev`
+4. Rename `env.example` to `.env` and add your database credentials
 
 ## Features
 
 - [x] Home page
 - [ ] Cart system
-- [ ] Game page
+- [x] Game page
 - [ ] User authentication
-- [ ] DB connection
+- [x] DB connection
 
 ## License
 
