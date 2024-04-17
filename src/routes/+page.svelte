@@ -1,28 +1,26 @@
 <script>
+  import SearchBar from "../lib/SearchBar.svelte";
   import { onMount } from "svelte";
   import Carousel from "../lib/Carousel.svelte";
   import Categories from "../lib/Categories.svelte";
-  const Games = [
-    "BGMI",
-    "CS 2",
-    "Palworld",
-    "Crusaders",
-    "Angry Birds",
-    "GTA V",
-    "Minecraft",
-    "Among Us",
-    "Valorant",
-  ];
   let games = [];
+  let searchTerm = "";
   async function fetchData() {
     const res = await fetch("/api/games");
     const data = await res.json();
     games = data;
   }
+
+  $: filteredGames = games.filter((game) =>
+    game.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   onMount(() => {
     fetchData();
   });
 </script>
+
+<div class="absolute top-3"><SearchBar bind:searchTerm /></div>
 
 <div class="w-full h-full py-2 gap-8 flex flex-col overflow-y-auto">
   <Carousel />
@@ -30,7 +28,7 @@
   <div
     class="w-full h-auto px-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 3xl:grid-cols-8 gap-8"
   >
-    {#each games as game (game)}
+    {#each filteredGames as game (game)}
       <a
         href={`/games/${game.game_id}`}
         class="w-32 h-40 bg-secondary border-[1px] border-utility rounded-md px-3 py-3"

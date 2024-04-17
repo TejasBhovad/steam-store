@@ -1,12 +1,5 @@
 <script>
-  let categories = [
-    "All",
-    "Action",
-    "Adventure",
-    "RPG",
-    "Strategy",
-    "Simulation",
-  ];
+  let categories = ["Action", "Adventure", "RPG", "Strategy", "Simulation"];
   function goNextCategory() {
     categories.push(categories.shift());
     categories = [...categories];

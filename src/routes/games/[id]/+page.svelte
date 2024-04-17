@@ -58,7 +58,7 @@
           alt="Game cover"
           class="w-full h-full object-cover rounded-md"
         />
-      {:else}{/if}
+      {:else}{""}{/if}
     </div>
     <div class="w-full h-full flex flex-col gap- px-4 py-2">
       <div class="w-full h-8 text-lg font-semibold">
@@ -102,7 +102,7 @@
       </a>
     {/each}
   </div>
-  <div class="w-full h-64 bg-green-400 flex rounded-md">
+  <div class="w-full h-64 bg-green-400 bg-opacity-5 flex rounded-md">
     <div class="w-full h-64">
       <img src={images[current]} alt="" class="w-full h-full object-cover" />
     </div>

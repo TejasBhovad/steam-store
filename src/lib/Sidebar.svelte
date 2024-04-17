@@ -1,11 +1,24 @@
 <script>
+  import { page } from "$app/stores";
+  console.log($page.data.session);
+
+  const adminList = [
+    "tejasbhovad@gmail.com",
+    "jaydarje@gmail.com",
+    "denisanthony871@gmail.com",
+  ];
+  const user =
+    $page.data.session && $page.data.session.user
+      ? $page.data.session.user.email
+      : undefined;
+  const isAdmin = user ? adminList.includes(user) : false;
   import Cart from "./logos/Cart.svelte";
   import Explore from "./logos/Explore.svelte";
   import Featured from "./logos/Featured.svelte";
-  const pageList = [
+  let pageList = [
     {
       name: "Explore",
-      href: "/explore",
+      href: "/",
       component: Explore,
     },
     {
@@ -18,12 +31,15 @@
       href: "/cart",
       component: Cart,
     },
-    {
+  ];
+  // append admin page if admin
+  if (isAdmin) {
+    pageList.push({
       name: "Admin",
       href: "/admin",
       component: Featured,
-    },
-  ];
+    });
+  }
 </script>
 
 <nav

@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth/sveltekit": "^0.15.0",
 		"@supabase/supabase-js": "^2.39.7"
 	}
 }

@@ -1,11 +1,12 @@
 import { json } from "@sveltejs/kit";
 import { supabase } from "$lib/supabaseClient";
 
-export async function GET({ params }) {
-  console.log("GET /api/games/category/" + params.category);
+export async function POST({ request }) {
+  const { category } = await request.json();
+  console.log("GET /api/games/category/" + category);
   const { data } = await supabase
     .from("games")
     .select()
-    .eq("categories", params.category);
+    .contains("categories", [category]);
   return json(data);
 }
