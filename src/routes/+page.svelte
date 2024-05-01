@@ -31,16 +31,17 @@
     {#each filteredGames as game (game)}
       <a
         href={`/games/${game.game_id}`}
-        class="w-32 h-40 bg-secondary border-[1px] border-utility rounded-md px-3 py-3"
+        class="w-32 h-40 bg-secondary border-[1px] border-utility rounded-md px-3 py-3 flex flex-col gap-1 items-center hover:shadow-md transition-all duration-200 ease-in-out"
       >
-        <div class="bg-utility w-full aspect-square rounded-md">
+        <div class="bg-utility w-full aspect-square rounded-md overflow-hidden">
           <img
             src={game.cover_image}
             alt={game.name}
             class="w-full h-full object-cover rounded-md"
           />
         </div>
-        <span class="w-full items-center justify-center flex py-1"
+        <span
+          class="w-full items-center justify-center flex py-1 overflow-hidden text-sm font-medium text-white/90"
           >{game.name}</span
         >
       </a>

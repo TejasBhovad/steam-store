@@ -78,14 +78,14 @@
       <div
         class="my-2 rounded-full bg-primary h-8 w-1/2 flex sm:hidden min-w-24"
       >
-        <button class="w-full h-full text-white font-semibold text-md px-3"
+        <button class="w-full h-full text-black font-semibold text-md px-3"
           >Download</button
         >
       </div>
     </div>
     <div class="hidden sm:flex w-1/4 flex items-center justify-center">
       <div class="rounded-full bg-primary h-8">
-        <button class="w-full h-full text-white font-semibold text-md px-3"
+        <button class="w-full h-full text-black font-semibold text-md px-3"
           >Download</button
         >
       </div>
@@ -111,5 +111,16 @@
       on:click={handleNextClick}
       class="relative px-2 py-1 rounded-sm bg-secondary">></button
     >
+  </div>
+
+  <div class="w-full h-auto p-5 flex flex-col gap-2">
+    <div class="w-full h-auto text-lg font-semibold">Description</div>
+    <div class="w-full h-auto text-md font-medium opacity-75">
+      {#if game}
+        {game[0].description}
+      {:else}
+        Loading...
+      {/if}
+    </div>
   </div>
 </div>

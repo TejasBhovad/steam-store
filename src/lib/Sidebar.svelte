@@ -26,11 +26,11 @@
       href: "/experiments",
       component: Featured,
     },
-    {
-      name: "Cart",
-      href: "/cart",
-      component: Cart,
-    },
+    // {
+    //   name: "Cart",
+    //   href: "/cart",
+    //   component: Cart,
+    // },
   ];
   // append admin page if admin
   if (isAdmin) {
